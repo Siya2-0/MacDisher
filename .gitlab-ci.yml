@@ -1,0 +1,31 @@
+stages:
+  - build
+
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "student1_final"
+
+build:
+  stage:  build
+  image: docker:24.0.7-git
+  services:
+    - docker:24.0.7-dind
+  only:
+    - student1_final
+
+  variables:
+    DOCKER_TLS_CERTDIR : "/certs"
+
+  before_script:
+    - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+    - docker-compose down || true
+
+  script:
+    - docker-compose -f docker-compose.yml  up --build
+    - docker tag mcdisher:default mcdisher:dev
+    - docker push CI_REGISTRY_IMAGE
+
+
+
+

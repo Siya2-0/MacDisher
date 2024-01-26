@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<main class="col ps-md-2 pt-2 maincontent" >
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Reserve A Unique MAC Address</h1>
+        <p class="lead text-muted">Reserves a unique MAC address upon your request and search for MAC address, ensuring a personalized and secure connection for your device</p>
+        <p>
+          <a href="{%url 'macd:reserver'%}" class="btn btn-primary my-2">Reserve MAC Address</a>
+          <a href="{%url 'macd:fitler'%}" class="btn btn-primary my-2">Find MAC Address</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="card text-center">
+    <div class="card-header">
+    
+    </div>
+    <div class="card-body">
+      {% if user.is_authenticated %}
+      <h5 class="card-title">Welcome  {{ user.username }}</h5>
+      {% else %}
+      <h5 class="card-title">You are not logged in</h5>
+      <a href="{%url "loginAPP:login" %}" class="btn btn-primary">LOGIN</a>
+      {% endif %}
+    </div>
+    <div class="card-footer text-muted">
+      
+    </div>
+  </div>
+
+</main>
+</div>
+</div>
+
+
+{% endblock %}
+

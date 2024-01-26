@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: mac_user
+      MYSQL_PASSWORD: mac_password
+      MYSQL_DATABASE: mac_registry
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    ports:
+      - '3306:3306'
+    networks:
+      -KSESNetwork:
+
+  frontend:
+       image: mcdisher:default
+       build: .
+       container_name: mcdisher_container
+       command: >
+         sh -c "python3 manage.py makemigrations &&
+                python3 manage.py migrate &&
+                python3 manage.py runserver 0.0.0.0:8000"
+       depends_on:
+         - db
+       ports:
+         - '8000:8000'
+       volumes:
+         - .:/app
+       networks:
+        -KSESNetwork:
+
+
+networks:
+   -KSESNetwork:
+
+

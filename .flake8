@@ -1,0 +1,11 @@
+[flake8]
+# Use black formatter line length.
+max-line-length = 88
+
+per-file-ignores =
+    # Allow init modules to import unused modules.
+    __init__.py: F401, F403, F811, I004
+    # Unittests.
+    # 1) Don't require docstrings in tests.
+    # 2) Allow assert in tests.
+    test_*.py: D100, D101, D102, D103, D104, S101

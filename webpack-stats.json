@@ -1,0 +1,23 @@
+{
+  "status": "done",
+  "assets": {
+    "main-89612bec100938836269.css": {
+      "name": "main-89612bec100938836269.css",
+      "path": "/home/siya20/Documents/Macdisher2.0/macdisher/static/webpack_bundles/main-89612bec100938836269.css"
+    },
+    "main-89612bec100938836269.js": {
+      "name": "main-89612bec100938836269.js",
+      "path": "/home/siya20/Documents/Macdisher2.0/macdisher/static/webpack_bundles/main-89612bec100938836269.js"
+    },
+    "main-89612bec100938836269.js.map": {
+      "name": "main-89612bec100938836269.js.map",
+      "path": "/home/siya20/Documents/Macdisher2.0/macdisher/static/webpack_bundles/main-89612bec100938836269.js.map"
+    }
+  },
+  "chunks": {
+    "main": [
+      "main-89612bec100938836269.css",
+      "main-89612bec100938836269.js"
+    ]
+  }
+}

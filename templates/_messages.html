@@ -1,0 +1,22 @@
+{% load notification_tags %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show">
+      <strong></strong> {{message}}.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if messages_Nothing_Found %}
+<ul class="messages">
+    {% for message in messages_Nothing_Found %}
+    <div class="alert alert-info alert-dismissible fade show">
+      <strong>Info!</strong> {{message}}.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+    {% endfor %}
+</ul>
+{% endif %}

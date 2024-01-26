@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "macdisher"
+version = "0.1.1"
+description = ""
+authors = ["Frans van der Linden <frans@kses.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2"
+django-webpack-loader = "^1.8.1"
+django-rest-framework = "^0.1.0"
+django-widget-tweaks = "^1.4.12"
+django-auth-ldap = "^4.2.0"
+mysqlclient = "^2.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+pre-commit = "^3.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

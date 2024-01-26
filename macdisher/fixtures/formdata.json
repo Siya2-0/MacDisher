@@ -1,0 +1,283 @@
+[
+    {
+        "model": "macdisher.Device",
+        "pk":1,
+        "fields":{
+            "DeviceName":"Ditex"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":2,
+        "fields":{
+            "DeviceName":"SST"
+        }
+
+    }, 
+    
+    {
+        "model": "macdisher.Device",
+        "pk":3,
+        "fields":{
+            "DeviceName":"A5"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":4,
+        "fields":{
+            "DeviceName":"FW"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":5,
+        "fields":{
+            "DeviceName":"E1RSW"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":6,
+        "fields":{
+            "DeviceName":"RSM-CONTROLLER"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":7,
+        "fields":{
+            "DeviceName":"MiniRSM"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":8,
+        "fields":{
+            "DeviceName":"Blue Penguin"
+        }
+
+    },
+    {
+        "model": "macdisher.Device",
+        "pk":9,
+        "fields":{
+            "DeviceName":"TTL Comms unit"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":10,
+        "fields":{
+            "DeviceName":"RSM blue"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":11,
+        "fields":{
+            "DeviceName":"BLEkey"
+        }
+
+    },
+
+    
+    {
+        "model": "macdisher.Device",
+        "pk":12,
+        "fields":{
+            "DeviceName":"RSM AIR"
+        }
+
+    },
+    
+
+    
+
+    {
+        "model": "macdisher.Device",
+        "pk":13,
+        "fields":{
+            "DeviceName":"KAMSTRUP"
+        }
+
+    },
+    
+    {
+        "model": "macdisher.Device",
+        "pk":14,
+        "fields":{
+            "DeviceName":"COMS_UNIT"
+        }
+
+    },
+
+    
+
+    {
+        "model": "macdisher.Device",
+        "pk":15,
+        "fields":{
+            "DeviceName":"BP_Motherboard"
+        }
+
+    },
+    
+
+    {
+        "model": "macdisher.Device",
+        "pk":16,
+        "fields":{
+            "DeviceName":"Tracker RTC"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":17,
+        "fields":{
+            "DeviceName":"A5_MB"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":18,
+        "fields":{
+            "DeviceName":"Eth2Serial"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":19,
+        "fields":{
+            "DeviceName":"PoE Comms Unit"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":20,
+        "fields":{
+            "DeviceName":"Comms Unit"
+        }
+
+    },
+    
+    {
+        "model": "macdisher.Device",
+        "pk":21,
+        "fields":{
+            "DeviceName":"Tracker_RTC"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":22,
+        "fields":{
+            "DeviceName":"LTE Comms Unit"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":23,
+        "fields":{
+            "DeviceName":"POE Dock"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":24,
+        "fields":{
+            "DeviceName":"BLE4337"
+        }
+
+    },
+    {
+        "model": "macdisher.Device",
+        "pk":25,
+        "fields":{
+            "DeviceName":"GSM Dock"
+        }
+
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":26,
+        "fields":{
+            "DeviceName":"KEYBT22"
+        }
+    },
+
+    {
+        "model": "macdisher.Device",
+        "pk":27,
+        "fields":{
+            "DeviceName":"RSM_AIR"
+        }
+    },
+    {
+        "model": "macdisher.Device",
+        "pk":28,
+        "fields":{
+            "DeviceName":""
+        }
+    },
+
+    
+    {
+        "model": "macdisher.Allocation",
+        "pk":1,
+        "fields":{
+            "AllocationType":"ASSIGNED"
+        }
+
+    },
+    {
+        "model": "macdisher.Allocation",
+        "pk":2,
+        "fields":{
+            "AllocationType":"PENDING"
+        }
+
+    },
+    {
+        "model": "macdisher.Allocation",
+        "pk":3,
+        "fields":{
+            "AllocationType":""
+        }
+
+    }
+    
+
+
+]

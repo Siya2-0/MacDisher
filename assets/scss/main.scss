@@ -1,0 +1,77 @@
+@for $i from 1 through 8 {
+  // ul:nth-child(3n + #{$i}) {
+  //   background-color: lighten($base-color, $i * 5%);
+  // }
+  .m-#{$i} {
+      margin: #{$i}px
+  }
+  .mt-#{$i} {
+      margin-top: #{$i}px
+  }
+  .mb-#{$i} {
+      margin-bottom: #{$i}px
+  }
+  .ml-#{$i} {
+      margin-left: #{$i}px
+  }
+  .mr-#{$i} {
+      margin-right: #{$i}px
+  }
+
+  .p-#{$i} {
+      padding-top: #{$i}px
+  }
+  .pt-#{$i} {
+      padding-top: #{$i}px
+  }
+  .pb-#{$i} {
+      padding-bottom: #{$i}px
+  }
+  .pl-#{$i} {
+      padding-left: #{$i}px
+  }
+  .pr-#{$i} {
+      padding-right: #{$i}px
+  }
+}
+
+.columns.is-right {
+  justify-content: flex-end;
+}
+.column.is-right {
+  justify-content: flex-end;
+}
+
+.box.is-right {
+  justify-content: flex-end;
+}
+
+// Center column item
+.flex-column-sb {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
+
+
+
+
+$block-spacing: 0.5rem;
+// $family-sans-serif: "Nunito", sans-serif;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: #f95959;
+// $link: #455d7a;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// // Update some of Bulma's component variables
+// $body-background-color: #e3e3e3;
+// $control-border-width: 1px;
+// $input-border-color: #455d7a;
+// $input-shadow: none;
+
+
+@import "bootstrap/scss/bootstrap";
+
+

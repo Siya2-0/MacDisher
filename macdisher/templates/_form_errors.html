@@ -1,0 +1,12 @@
+{% if errors %}
+<ul class="text-red-800">
+  {% for error in errors %}
+  <li class="my-3">
+    <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+    {{ error }}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

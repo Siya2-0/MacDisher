@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<!-- Use the static file alias -->
+<script type="module">
+  import { IndexController } from "{% static 'macdisher/index_controller.js' %}"
+  utils.whenDocumentReady(() => {
+    console.log('Document ready')
+    const indexController = new IndexController();
+    indexController.check();
+  })
+</script>
+
+
+<head>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+      {% comment %} from this point it must be another page {% endcomment %}
+      <main class="col ps-md-2 pt-2  maincontent">
+
+        <div class="page-header pt-3">
+            <h2>Search for Mac Address</h2>
+        </div>
+        <p class="lead">Enter MacAddress, Device, Allocation </p>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p><div class="box"  >
+
+                  <form class="form-group" action="{%url 'macd:fitler'%}"  method="post" >
+                    {% csrf_token %}
+                    <div class="AllFormFields">
+                      <div class="form-outline"  data-mdb-input-init>
+                        {{ form.MacInput.label_tag}}
+                        {{ form.MacInput}}
+                      </div>
+                      <div class="form-outline">
+                        {{ form.DeviceInput.label_tag}}
+                        {{ form.DeviceInput}}
+                      </div>
+                      <div class="form-outline">
+                        {{ form.AllocationInput.label_tag}}
+                        {{ form.AllocationInput}}
+                      </div>
+                    </div>
+                    <br>
+                    <center><input id="searchbutton" class="btn btn-primary" type="submit" value="SEARCH"></center>
+                  <form>
+                    <br>
+                    <br>
+                  {%if number != null %}
+                  <center><div><h5 class="h5-responsive">Results({{number}})</h5></div><center>
+                  {% endif %}
+
+                  {%if number != null %}
+
+                    <table class="table  table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Allocation</th>
+                        <th scope="col">Device</th>
+                        <th scope="col">MAC</th>
+                        <th scope="col">Metastring</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">User</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in  results %}
+                      <tr>
+                        <th scope="row">{{i.id}} </th>
+                        <td>{{i.allocation}} </td>
+                        <td>{{i.device}}</td>
+                        <td>{{i.mac}}</td>
+                        <td>{{i.metastring}}</td>
+                        <td>{{i.time}} </td>
+                        <td>{{i.user}} </td>
+                      </tr>
+                    {%endfor%}
+                    </tbody>
+                    </table>
+
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          {%if results.has_previous%}
+                          <li class="page-item"><a class="page-link" href="{%url 'macd:paginate' pagenumber=results.previous_page_number  list=Paralist%}">Previous</a></li>
+                          {%endif%}
+                          <li class="page-item"><a class="page-link" href="#">{{results.number}}</a></li>
+                          {%if results.has_next%}
+                          <li class="page-item"><a class="page-link" href="{%url 'macd:paginate' pagenumber=results.next_page_number list=Paralist%}">Next</a></li>
+                          {%endif%}
+                        </ul>
+                      </nav>
+
+                      {%if Paralist != null%}
+                      <a href="{%url 'macd:export_to_csv' list=Paralist%}">
+                        <button type="button" class="btn btn-primary">Export CSV</button>
+                      </a>
+                      {%endif%}
+
+
+
+                  {% endif %}
+
+
+
+                </div></p>
+
+
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <a  data-bs-target="#collapseOne" class="btn btn-primary"  data-bs-toggle="collapse" href="#" role="button" >
+                          Pending MACs
+                        </a>
+                        {%if CountPending != null%}
+                        <span id='countPending'>( {{CountPending}} )</span>
+                        {%endif%}
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        {%if Pending != null%}
+
+                        <table class="table  table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">id</th>
+                              <th scope="col">Allocation</th>
+                              <th scope="col">Device</th>
+                              <th scope="col">MAC</th>
+                              <th scope="col">Metastring</th>
+                              <th scope="col">Time</th>
+                              <th scope="col">User</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for i in  Pending %}
+                            <tr>
+                              <th scope="row">{{i.id}} </th>
+                              <td>{{i.allocation}} </td>
+                              <td>{{i.device}}</td>
+                              <td>{{i.mac}}</td>
+                              <td>{{i.metastring}}</td>
+                              <td>{{i.time}} </td>
+                              <td>{{i.user}} </td>
+                            </tr>
+                          {%endfor%}
+                          </tbody>
+                          </table>
+                          <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              {%if Pending.has_previous%}
+                              <li class="page-item"><a class="page-link" href="{%url 'macd:paginate_pending' pagenumber=Pending.previous_page_number %}">Previous</a></li>
+                              {%endif%}
+                              <li class="page-item"><a class="page-link" href="#">{{Pending.number}}</a></li>
+                              {%if Pending.has_next%}
+                              <li class="page-item"><a class="page-link" href="{%url 'macd:paginate_pending'  pagenumber=Pending.next_page_number %}">Next</a></li>
+                              {%endif%}
+                            </ul>
+                          </nav>
+
+
+                        {%endif%}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+</div>
+    {% comment %} till point {% endcomment %}
+
+{% endblock %}

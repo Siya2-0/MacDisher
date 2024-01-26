@@ -1,0 +1,10 @@
+repos:
+    # - repo: local   # Use local version so that we don't go astray with versions.
+    - repo: https://github.com/pre-commit/mirrors-autopep8
+      rev: '7d14f78422aef2153a90e33373d2515bcc99038d'  # Use the sha / tag you want to point at
+      hooks:
+        - id: autopep8
+          name: autopep8
+          entry: autopep8
+          language: system
+          types_or: [python, pyi]

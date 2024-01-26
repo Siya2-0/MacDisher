@@ -1,0 +1,18 @@
+
+
+<footer  style="padding: 0;" id="footerid">
+  <div id="containerfooter">
+    <div id="part1">
+        <div id="companyinfo">
+            <a id="sitelink" >Production</a>
+            <p id="title">@Keystone Electrical Solutions</p>
+            {% if user.is_authenticated %}
+            <p id="detail">Login in as {{ user.username }}. </p>
+            {% endif %}
+        </div>
+    </div>
+    <div id="part2">
+        <p id="txt6"><i class="material-icons tiny"></i>copyright@2023 KSES- All right reserved</p> 
+    </div>
+</div>
+</footer>

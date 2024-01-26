@@ -1,0 +1,49 @@
+<div class="container-fluid "  id="sidebar_width">
+  <div class="row flex-nowrap">
+      <div class="col px-0"  style="width: 0px;">
+          <div id="sidebar" class="collapse collapse-horizontal show border-end min-vh-100">
+              <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start ">
+                {%if "home/"  in request.path %}
+                  <a href="{%url 'macd:macdisher_home'%}" class="list-group-item border-end-0 d-inline-block text-truncate active" data-bs-parent="#sidebar"><i class="bi bi-house"></i><span>Home</span> </a>
+                  {%else %}
+                  <a href="{%url 'macd:macdisher_home'%}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="bi bi-house"></i><span>Home</span> </a>
+                  {%endif%}
+
+                  {%if "search/"  in request.path %}
+                  <a href="{%url 'macd:fitler'%}" class="list-group-item border-end-0 d-inline-block text-truncate active" data-bs-parent="#sidebar"><i class="bi bi-search"></i> <span>Search</span> </a>
+                  {%else %}
+                  <a href="{%url 'macd:fitler'%}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="bi bi-search"></i> <span>Search</span> </a>
+                  {%endif%}
+
+                  {%if "reserve/"  in request.path %}
+                  <a href="{%url 'macd:reserver'%}"class="list-group-item border-end-0 d-inline-block text-truncate active" data-bs-parent="#sidebar"><i class="bi bi-bezier"></i> <span>Get Mac</span></a>
+                  {%else %}
+                  <a href="{%url 'macd:reserver'%}"class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="bi bi-bezier"></i> <span>Get Mac</span></a>
+                  {%endif%}
+
+
+                  <a href="{%url 'loginAPP:logout'%}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="bi bi-box-arrow-in-left"></i> <span>Logout</span></a>
+                    <br>
+
+                    <figure class="text-center"  style="width: 300px;" >
+                      <blockquote class="blockquote">
+                        <p>API</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer">
+                        Django <cite title="Source Title">REST FRAMEWORK</cite>
+                      </figcaption>
+                    </figure>
+
+                    
+                    <a href="{%url 'macd:API_reserver'%}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"> <span>getMAC</span></a> 
+                    <a href="{%url 'macd:API_Assign'%}" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>assignMAC</span> </a>
+                    <a href="{%url 'macd:API_allmac'%}"class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><san>allMAC</div></a>
+              </div> 
+      </div>
+
+ 
+ 
+ 
+
+
+      
