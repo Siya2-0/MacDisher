@@ -1,6 +1,14 @@
 # Introduction
 
-LDAP based example
+MacDisher is a Django project designed to manage MAC addresses. With MacDisher, users can request and assign MAC addresses conveniently. Additionally, MacDisher offers a search functionality for easily locating MAC addresses when needed
+
+## Features
+
+Request and Assign MAC Addresses: Users can request new MAC addresses and assign them as needed within the system.
+
+Search Functionality: MacDisher provides a search feature to efficiently locate MAC addresses based on specific criteria.
+
+Installation
 
 ## Development
 
